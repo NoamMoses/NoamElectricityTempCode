@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+fragment_about.xml
+This file is for the AboutFragment.java
+
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <!--
+        Set to match_parent so the width will be full
+        - and the bottom border won't be just for the word itself
+    -->
+
+    <!-- Page's title -->
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/about_title"
+        android:textSize="30sp" />
+
+    <!-- Container for the page -->
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical">
+
+        <!-- Scroll view for the entire page -->
+        <ScrollView
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp">
+
+            <!-- The whole text - the main text, email, and email "instructions" -->
+            <RelativeLayout
+                android:id="@+id/innerScrollLayout"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:paddingBottom="50dp">
+
+                <!-- Main text -->
+                <TextView
+                    android:id="@+id/appAbout"
+                    android:text="@string/APP_ABOUT"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:scrollbars="vertical"
+                    android:gravity="center" />
+
+                <!-- Email -->
+                <TextView
+                    android:id="@+id/appAbout_email"
+                    android:text="@string/app_email"
+                    android:textSize="20sp"
+                    android:textColor="#0037FF"
+                    android:fontFamily="casual"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/appAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Email "instruction" - "Click here to send an email" -->
+                <TextView
+                    android:id="@+id/appAbout_emailInstructions"
+                    android:text="@string/emailInstructions"
+                    android:textSize="15sp"
+                    android:textColor="#7E7E7E"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/appAbout_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <!-- Text "The app is also available in..." -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="@string/languageAvailable" />
+
+        <!-- Layout for the flags -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="10"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_gravity="center">
+
+            <!-- Flags -->
+            <!-- UK -->
+            <ImageView
+                android:id="@+id/uk"
+                android:contentDescription="@string/nemo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.10"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/uk_il"
+                app:srcCompat="@drawable/united_kingdom" />
+            <!-- Spacer between UK and IL -->
+            <TextView
+                android:id="@+id/uk_il"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.1"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/il"/>
+
+            <!-- IL -->
+            <ImageView
+                android:id="@+id/il"
+                android:contentDescription="@string/nemo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.10"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/il_de"
+                app:srcCompat="@drawable/israel" />
+            <!-- Spacer between UK and GE -->
+            <TextView
+                android:id="@+id/il_de"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.1"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/germany"/>
+
+            <!-- DE -->
+            <!-- No ..toLeftOf because it's in the parent centre -->
+            <ImageView
+                android:id="@+id/germany"
+                android:contentDescription="@string/nemo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.10"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/germany" />
+            <TextView
+                android:id="@+id/ge_fi"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.1"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/germany"/>
+
+            <!-- FI -->
+            <ImageView
+                android:id="@+id/finland"
+                android:contentDescription="@string/nemo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.10"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ge_fi"
+                app:srcCompat="@drawable/finland" />
+            <TextView
+                android:id="@+id/fi_no"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.1"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/finland"/>
+
+            <!-- NO -->
+            <ImageView
+                android:id="@+id/norway"
+                android:contentDescription="@string/nemo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintWidth_percent="0.10"
+
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/fi_no"
+                app:srcCompat="@drawable/norway" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    <!-- Including the credits -->
+    <include layout="@layout/bottom_credits" />
+</RelativeLayout>

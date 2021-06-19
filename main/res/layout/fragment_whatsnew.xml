@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <!--
+        Set to math_parent so the width will be full
+        - and the bottom border won't be just for the word itself
+    -->
+
+    <!-- Pag's title -->
+    <TextView
+        android:id="@+id/whatsnew_title"
+        android:text="@string/whatsnew_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <!-- Version name -->
+    <TextView
+        android:id="@+id/whatsnew_title_lastVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whatsnew_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/whatsnew_title_lastVersion"
+        android:textSize="25sp" />
+
+    <!-- The text itself - the content -->
+    <TextView
+        android:text="@string/whatsnew_lastVersion"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whatsnew_title_lastVersion"
+        android:paddingTop="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:scrollbars="vertical" />
+
+    <!-- Including the credits -->
+    <include layout="@layout/bottom_credits" />
+</RelativeLayout>

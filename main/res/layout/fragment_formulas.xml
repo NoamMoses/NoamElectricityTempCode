@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+fragment_formulas.xml
+This file is for the FormulasFragment.java
+
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Page's title -->
+    <TextView
+        android:id="@+id/formulas_title"
+        android:text="@string/formulas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"/>
+
+    <!-- Ohm's law layout -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_ohm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_title"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2"
+        android:background="@drawable/border_bottom_black">
+
+        <!-- Ohm's law title -->
+        <!-- Text is being set in FormulasFragment.java -->
+        <TextView
+            android:id="@+id/ohm_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <!-- Ohm's law - the law itself -->
+        <TextView
+            android:text="@string/ohmLaw"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Watt formula layout -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_watt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_ohm"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2"
+        android:background="@drawable/border_bottom_black">
+
+        <!-- Watt formula title -->
+        <!-- Text is being set in FormulasFragment.java -->
+        <TextView
+            android:id="@+id/watt_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <!-- Watt formula - the formula itself -->
+        <TextView
+            android:text="@string/wattFormula"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Resistors layout -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_resistorsMainTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_watt"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="1"
+        android:background="#1A000000">
+
+        <!-- Resistors layout title -->
+        <TextView
+            android:id="@+id/resistors_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Resistors series/parallel titles -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_resistors_titles"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_resistorsMainTitle"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2">
+
+        <!-- Resistors in series title -->
+        <TextView
+            android:id="@+id/resistorsSeries_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <!-- Resistors in parallel title -->
+        <TextView
+            android:id="@+id/resistorsParallel_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Resistors in series/parallel photos -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_resistors_values"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_resistors_titles"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom_black">
+
+        <!-- Resistors in series photo -->
+        <ImageView
+            android:contentDescription="@string/resistors"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:src="@drawable/resistor_series_big_txt1" />
+
+        <!-- Resistors in parallel photo -->
+        <ImageView
+            android:contentDescription="@string/resistors"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:src="@drawable/resistor_parallel_big_txt2" />
+    </LinearLayout>
+
+    <!-- Capacitors layout -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_capacitorsMainTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_resistors_values"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="1"
+        android:background="#1A000000">
+        <!-- Capacitors layout title -->
+        <TextView
+            android:id="@+id/capacitors_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Capacitors in series/parallel titles -->
+    <LinearLayout
+        android:id="@+id/formulas_layout_capacitors_titles"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_capacitorsMainTitle"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2">
+
+        <!-- Capacitors in series title -->
+        <TextView
+            android:id="@+id/capacitorsSeries_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <!-- Capacitors in parallel title -->
+        <TextView
+            android:id="@+id/capacitorsParallel_title"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- Capacitors in series/parallel photos -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/formulas_layout_capacitors_titles"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:weightSum="2"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom_black">
+
+        <!-- Capacitors in series photos -->
+        <ImageView
+            android:contentDescription="@string/capacitors"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:src="@drawable/capacitors_series" />
+
+        <!-- Capacitors in parallel photos -->
+        <ImageView
+            android:contentDescription="@string/capacitors"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:src="@drawable/capacitors_parallel" />
+    </LinearLayout>
+
+    <!-- Including the credits -->
+    <include layout="@layout/bottom_credits" />
+</RelativeLayout>
